@@ -90,7 +90,7 @@ function saveContactForAndroid(contact) {
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
 VERSION:4.0
-N:${contact.name}
+N:${contact.name};${contact.name};${contact.name}
 F:added
 TITLE:Company Title
 FN:Firstname
