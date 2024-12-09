@@ -72,6 +72,7 @@ function saveContactToDevice(contactDetails) {
             }
         } catch (error) {
             console.error('Web Contacts API Error:', error);
+            alert("error")
             saveViaFallbackMethods(contact);
         }
     }
@@ -126,7 +127,9 @@ END:VCARD`;
             anchorTag.click();
             alert('Please save the contact in the iOS prompt');
         } catch (error) {
+            alert(error)
             fallbackManualCopy(contact);
+
         }
     }
 
@@ -137,11 +140,14 @@ END:VCARD`;
 
     // Main saving logic
     if ('contacts' in navigator && 'ContactsManager' in window) {
+        alert(contacts)
         saveViaWebContactsAPI(fullContactDetails);
     }
     else if (isMobileDevice()) {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            alert("iphone")
             saveContactForIOS(fullContactDetails);
+
         }
         else if (/Android/i.test(navigator.userAgent)) {
             const vCardContent = createVCard(fullContactDetails);
@@ -198,6 +204,8 @@ document.getElementById('saveContactBtn').addEventListener('click', (e) => {
         website: document.getElementById('website').value,
         notes: document.getElementById('notes').value
     };
+
+    alert("initial")
 
     saveContactToDevice(contactDetails);
 });
