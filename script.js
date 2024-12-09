@@ -124,10 +124,10 @@ END:VCARD`;
         document.body.appendChild(tempInput);
 
         try {
-            anchorTag.click();
             alert('Please save the contact in the iOS prompt');
+            anchorTag.click();
         } catch (error) {
-            alert(error)
+            alert("error")
             fallbackManualCopy(contact);
 
         }
@@ -140,7 +140,7 @@ END:VCARD`;
 
     // Main saving logic
     if ('contacts' in navigator && 'ContactsManager' in window) {
-        alert(contacts)
+        alert("contacts")
         saveViaWebContactsAPI(fullContactDetails);
     }
     else if (isMobileDevice()) {
@@ -150,6 +150,7 @@ END:VCARD`;
 
         }
         else if (/Android/i.test(navigator.userAgent)) {
+            alert("ok")
             const vCardContent = createVCard(fullContactDetails);
             const blob = new Blob([vCardContent], { type: 'text/vcard' });
 
