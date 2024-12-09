@@ -85,25 +85,16 @@ function saveContactForIOS(contact) {
     }
 }
 
-
-
 // Android Contact Saving
 function saveContactForAndroid(contact) {
-
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
-    VERSION:3.0
-    N:${contact.lastName}${contact.firstName}
-    FN:${contact.fullName}
-    ORG:${contact.organization}
-    TITLE:${contact.title}
-    BDAY:${contact.birthday}
-    ADR;TYPE=WORK:;;${contact.address.street};${contact.address.city};${contact.address.state};${contact.address.zip};${contact.address.country}\r\n\
-    TEL;TYPE=WORK,MSG:${contact.workPhone}
-    TEL;TYPE=WORK,FAX:${contact.workFax}
-    TEL;TYPE=CELL:${contact.mobilePhone}
-    EMAIL;TYPE=INTERNET:${contact.email}
-    END:VCARD`
+VERSION:3.0
+N:${contact.name}
+FN:${contact.name}
+TEL;TYPE=CELL:${contact.phone}
+EMAIL:${contact.email}
+END:VCARD`;
 
     // Create a Blob with vCard data
     const blob = new Blob([contactString], { type: 'text/vcard' });
@@ -138,23 +129,9 @@ document.getElementById('saveContactBtn').addEventListener('click', (e) => {
     e.preventDefault();
 
     const contactDetails = {
-        firstName: "Derik",
-        lastName: "Stenerson",
-        fullName: "Derik Stenerson",
-        organization: "Microsoft Corporation",
-        title: "Software Engineer",
-        birthday: "1963-09-21", // Correct date format YYYY-MM-DD
-        address: {
-            street: "One Microsoft Way",
-            city: "Redmond",
-            state: "WA",
-            zip: "98052-6399",
-            country: "USA"
-        },
-        workPhone: "+1-425-936-5522",
-        workFax: "+1-425-936-7329",
-        mobilePhone: "+1-425-936-0000",
-        email: "deriks@Microsoft.com"
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value
     };
 
     saveContactToDevice(contactDetails);
