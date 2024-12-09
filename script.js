@@ -91,7 +91,11 @@ function saveContactForAndroid(contact) {
     const contactString = `BEGIN:VCARD
 VERSION:3.0
 N:${contact.name}
-FN:${contact.name + "added name"}
+FN:first name
+TITLE:some title
+BDAY:28/08/1988
+ORG:Auxxweb solutions
+ADR:Palazhi hilite kozhikode
 TEL;TYPE=CELL:${contact.phone}
 EMAIL:${contact.email}
 END:VCARD`;
