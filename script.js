@@ -130,8 +130,10 @@ END:VCARD`;
         }
     }
 
-    // Existing helper methods remain the same
-    // ... (previous isMobileDevice, fallbackManualCopy methods)
+    // Detect mobile device
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
 
     // Main saving logic
     if ('contacts' in navigator && 'ContactsManager' in window) {
