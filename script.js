@@ -92,7 +92,7 @@ function saveContactForAndroid(contact) {
 VERSION:4.0
 N:${contact.name}
 F:added
-TITLE:some title
+TITLE:Company Title
 FN:Firstname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
