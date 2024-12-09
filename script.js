@@ -24,7 +24,8 @@ async function saveViaWebContactsAPI(contact) {
         const contactProperties = [
             'name',
             'tel',
-            'email'
+            'email',
+            'address'
         ];
 
         const newContact = await navigator.contacts.select(contactProperties, { multiple: false });
@@ -33,7 +34,8 @@ async function saveViaWebContactsAPI(contact) {
             navigator.contacts.save({
                 name: contact.name,
                 tel: contact.phone,
-                email: contact.email
+                email: contact.email,
+                address: contact.address
             });
             alert('Contact saved successfully!');
         }
@@ -70,7 +72,8 @@ function saveContactForIOS(contact) {
     tempInput.value = JSON.stringify({
         name: contact.name,
         phone: contact.phone,
-        email: contact.email
+        email: contact.email,
+        address: contact.address
     });
 
     document.body.appendChild(anchorTag);
@@ -90,13 +93,13 @@ function saveContactForAndroid(contact) {
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
 VERSION:4.0
-N:${contact.name}1;${contact.name}2;${contact.name}3
+N:${contact.name + "1"};${contact.name + "2"};${contact.name + "3"}
 F:added
 TITLE:Company Title
 FN:Firstname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
-ADR;TYPE=WORK:Palazhi hilite kozhikode
+ADR;TYPE=WORK:${contact.address}
 TEL:${contact.phone}
 TEL;TYPE=WORK:7492384111
 EMAIL:${contact.email}
@@ -141,7 +144,8 @@ document.getElementById('saveContactBtn').addEventListener('click', (e) => {
     const contactDetails = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value
     };
 
     saveContactToDevice(contactDetails);
