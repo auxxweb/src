@@ -90,7 +90,7 @@ function saveContactForAndroid(contact) {
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
 VERSION:4.0
-N:${contact.name};${contact.name};${contact.name}
+N:${contact.name}1;${contact.name}2;${contact.name}3
 F:added
 TITLE:Company Title
 FN:Firstname
@@ -103,7 +103,7 @@ EMAIL:${contact.email}
 EMAIL;TYPE=WORK:edited@gmail.com
 URL:https://medium.com
 URL;TYPE=WORK:https://auxxweb.com
-PHOTO;TYPE=JPEG;VALUE=URI:https://freepnglogo.com/images/all_img/1724866361chatgpt-logo-png-green-background.png
+PHOTO;TYPE=JPG;VALUE=URI:https://swimburger.net/media/0zcpmk1b/azure.jpg
 END:VCARD`;
 
     // Create a Blob with vCard data
