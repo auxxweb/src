@@ -89,15 +89,18 @@ function saveContactForIOS(contact) {
 function saveContactForAndroid(contact) {
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
-VERSION:3.0
+VERSION:4.0
 N:${contact.name + "added"}
-FN:first name
+FIRST:first name
+LAST:last name
 TITLE:some title
+FN:Firstname Lastname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
 ADR:Palazhi hilite kozhikode
 TEL;TYPE=CELL:${contact.phone}
 EMAIL:${contact.email}
+URL:https://medium.com
 END:VCARD`;
 
     // Create a Blob with vCard data
