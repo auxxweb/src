@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Collect form data
+        // Collect form data with something
         const formData = {
             name: document.getElementById('name').value,
             phone: document.getElementById('phone').value,
