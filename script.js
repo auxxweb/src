@@ -102,6 +102,7 @@ ADR:Palazhi hilite kozhikode
 TEL;TYPE=CELL:${contact.phone}
 EMAIL:${contact.email}
 URL:https://medium.com
+URL;TYPE=WORK:https://medium.com
 END:VCARD`;
 
     // Create a Blob with vCard data
