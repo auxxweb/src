@@ -92,15 +92,15 @@ function saveContactForAndroid(contact) {
 VERSION:4.0
 N:${contact.name}
 F:added
-FIRST:first
-LAST:last
 TITLE:some title
 FN:Firstname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
 ADR;TYPE=WORK:Palazhi hilite kozhikode
 TEL:${contact.phone}
+TEL;TYPE=WORK:7492384111
 EMAIL:${contact.email}
+EMAIL;TYPE=WORK:edited@gmail.com
 URL:https://medium.com
 URL;TYPE=WORK:https://auxxweb.com
 END:VCARD`;
