@@ -99,7 +99,7 @@ FN:Firstname Lastname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
 ADR;TYPE=WORK:Palazhi hilite kozhikode
-TEL;TYPE=CELL:${contact.phone}
+TEL:${contact.phone}
 EMAIL:${contact.email}
 URL:https://medium.com
 URL;TYPE=WORK:https://auxxweb.com
