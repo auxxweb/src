@@ -85,28 +85,11 @@ function saveContactForIOS(contact) {
     }
 }
 
-const contact = {
-    firstName: "Derik",
-    lastName: "Stenerson",
-    fullName: "Derik Stenerson",
-    organization: "Microsoft Corporation",
-    title: "Software Engineer",
-    birthday: "1963-09-21", // Correct date format YYYY-MM-DD
-    address: {
-        street: "One Microsoft Way",
-        city: "Redmond",
-        state: "WA",
-        zip: "98052-6399",
-        country: "USA"
-    },
-    workPhone: "+1-425-936-5522",
-    workFax: "+1-425-936-7329",
-    mobilePhone: "+1-425-936-0000",
-    email: "deriks@Microsoft.com"
-}
+
 
 // Android Contact Saving
-function saveContactForAndroid(contactData) {
+function saveContactForAndroid(contact) {
+
     // Create a structured contact string
     const contactString = `BEGIN:VCARD
     VERSION:3.0
@@ -155,9 +138,23 @@ document.getElementById('saveContactBtn').addEventListener('click', (e) => {
     e.preventDefault();
 
     const contactDetails = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value
+        firstName: "Derik",
+        lastName: "Stenerson",
+        fullName: "Derik Stenerson",
+        organization: "Microsoft Corporation",
+        title: "Software Engineer",
+        birthday: "1963-09-21", // Correct date format YYYY-MM-DD
+        address: {
+            street: "One Microsoft Way",
+            city: "Redmond",
+            state: "WA",
+            zip: "98052-6399",
+            country: "USA"
+        },
+        workPhone: "+1-425-936-5522",
+        workFax: "+1-425-936-7329",
+        mobilePhone: "+1-425-936-0000",
+        email: "deriks@Microsoft.com"
     };
 
     saveContactToDevice(contactDetails);
