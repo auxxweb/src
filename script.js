@@ -103,6 +103,7 @@ EMAIL:${contact.email}
 EMAIL;TYPE=WORK:edited@gmail.com
 URL:https://medium.com
 URL;TYPE=WORK:https://auxxweb.com
+PHOTO;TYPE=JPEG;VALUE=URI:https://freepnglogo.com/images/all_img/1724866361chatgpt-logo-png-green-background.png
 END:VCARD`;
 
     // Create a Blob with vCard data
