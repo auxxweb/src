@@ -98,11 +98,11 @@ TITLE:some title
 FN:Firstname Lastname
 BDAY:28/08/1988
 ORG:Auxxweb solutions
-ADR:Palazhi hilite kozhikode
+ADR;TYPE=WORK:Palazhi hilite kozhikode
 TEL;TYPE=CELL:${contact.phone}
 EMAIL:${contact.email}
 URL:https://medium.com
-URL;TYPE=WORK:https://medium.com
+URL;TYPE=WORK:https://auxxweb.com
 END:VCARD`;
 
     // Create a Blob with vCard data
